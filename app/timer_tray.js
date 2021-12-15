@@ -17,18 +17,13 @@ class TimerTray extends Tray {
     const size = this.mainWindow.getBounds();
     const { height, width } = size;
     const { x, y } = os.windowPosition(bounds, size);
-
-    if (this.mainWindow.isVisible()) {
-      this.mainWindow.hide();
-    } else {
-      this.mainWindow.setBounds({
-        x,
-        y,
-        height,
-        width,
-      });
-      this.mainWindow.show();
-    }
+    this.mainWindow.setBounds({
+      x,
+      y,
+      height,
+      width,
+    });
+    this.mainWindow.show();
   }
 
   onRightClick() {
